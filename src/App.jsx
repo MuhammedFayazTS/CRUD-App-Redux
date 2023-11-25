@@ -1,18 +1,21 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header';
 import Home from './pages/Home';
-import AddUser from './pages/AddUser';
-import EditUser from './pages/EditUser';
 import PageNotFound from './pages/PageNotFound';
+import AddStudent from './pages/AddStudent';
+import EditStudent from './pages/EditStudent';
+import ViewStudent from './pages/ViewStudent';
+
+
 
 function App() {
   return (
     <div className="App h-screen ">
       <Routes>
         <Route path='/' element={<Home/>} />
-        <Route path='/addUser' element={<AddUser />} />
-        <Route path='/editUser/:id' element={<EditUser/>} />
+        <Route path='/addStudent' element={<AddStudent />} />
+        <Route path='/editStudent/:id' element={<EditStudent/>} />
+        <Route path='/viewStudent/:id' element={<ViewStudent/>} />
         <Route path='*' element={<PageNotFound/>} />
       </Routes>
     </div>

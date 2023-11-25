@@ -8,12 +8,12 @@ const studentSlice = createSlice({
             state.push(action.payload)
         },
         deleteStudents: (state,action) =>{
-            return state.filter((item,index)=> index !== action.payload )
+            return state.filter((item)=> item.rollno !== action.payload )
         },
         editStudent: (state, action) => {
-            const { data, index } = action.payload;
-            return state.map((item, i) => {
-                return i === index ? data : item;
+            const { data } = action.payload;
+            return state.map((item) => {
+                return item.rollno === data.rollno ? data : item;
             });
         }
         
